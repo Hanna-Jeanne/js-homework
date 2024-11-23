@@ -1,5 +1,5 @@
 import { data } from "./data.js";
-
+import { AudioPlayer } from "./audio.js";
 /* 
 
 1. 클릭 이벤트 활성화
@@ -18,6 +18,8 @@ import { data } from "./data.js";
   const visualImg = document.querySelector(".visual > div > img");
 
   const nav = document.querySelector(".nav");
+
+  // console.log(data[0].name.toLowerCase());
 
   /* ------------ setBgColor ------------ */
   function setBgColor(data) {
@@ -48,6 +50,8 @@ import { data } from "./data.js";
 
     const index = target.dataset.index;
 
+    const audioPlayer = new AudioPlayer(`assets/audio/${data[index - 1].name.toLowerCase()}.m4a`);
+
     thumbNails.forEach((li) => {
       li.classList.remove("is-active");
     });
@@ -59,6 +63,8 @@ import { data } from "./data.js";
     setImage(data[index - 1]);
 
     setNameText(data[index - 1]);
+
+    audioPlayer.play();
   }
 
   /* ------------ nav.clilkEvent ------------ */
