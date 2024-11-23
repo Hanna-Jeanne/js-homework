@@ -1,5 +1,6 @@
 import { data } from "./data.js";
 import { AudioPlayer } from "./audio.js";
+
 /* 
 
 1. 클릭 이벤트 활성화
@@ -54,6 +55,13 @@ import { AudioPlayer } from "./audio.js";
 
     thumbNails.forEach((li) => {
       li.classList.remove("is-active");
+    });
+
+    // gsap
+    gsap.from(".nickName", {
+      duration: 2,
+      y: 10,
+      ease: "back(2)",
     });
 
     target.classList.add("is-active");
