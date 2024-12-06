@@ -31,7 +31,7 @@ import { AudioPlayer } from "./audio.js";
 
   /* ------------ setImage ------------ */
   function setImage(data) {
-    visualImg.src = `./assets/${data.name}.jpeg`;
+    visualImg.src = `./assets/${data.name.toLowerCase()}.jpeg`;
     visualImg.alt = data.alt;
   }
 
